@@ -21,10 +21,18 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
 
+    <!-- CDN for sweet alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
     <?php include('./components/navigation.php') ?>
+
+
+    <div id="particles-js"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <div class="w-full h-screen flex justify-center items-center flex-col ">
 
@@ -61,19 +69,40 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
 
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <?php if (isset($_GET['status'])): ?>
         <script>
             const status = "<?php echo htmlspecialchars($_GET['status']); ?>";
             if (status === "success") {
-                alert("Login successful!");
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Login Successful',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
             } else if (status === "error") {
-                alert("Username or password is incorrect.");
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Username or password is incorrect.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+
             } else if (status === "recaptcha_required") {
-                alert("reCAPTCHA is required. Please check the box to verify you are human.");
+                Swal.fire({
+                    title: 'Required!',
+                    text: 'reCAPTCHA is required. Please check the box to verify you are human.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                });
             }
         </script>
     <?php endif; ?>
+
+
+    <script src="./particles.js"></script>
 </body>
 
 </html>

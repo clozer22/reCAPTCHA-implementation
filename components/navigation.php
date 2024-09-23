@@ -1,7 +1,7 @@
 <nav class="fixed w-full z-50 flex justify-between items-center py-5 px-6 bg-gray-800 top-0 left-0">
     <!-- Logo Section -->
     <div class="logo">
-        <h1 class="text-[2rem] font-black text-white">CLOZER <span class="text-[#35EAFF]">GAMING</span></h1>
+        <h1 class="text-[2rem] font-black text-white">CLOZER <span class="text-white px-3 py-2 bg-[#35EAFF] rounded-tl-[2rem] rounded-br-[2rem] cursor-pointer">GAMING</span></h1>
     </div>
     <!-- Navigation Menu -->
     <ul class="flex space-x-6">
