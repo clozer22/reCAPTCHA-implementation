@@ -19,6 +19,7 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
     <script src="https://google.com/recaptcha/api.js" async defer></script>
     <!-- I use tailwindcss for my styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
 
 </head>
 
@@ -27,14 +28,14 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
 
     <div class="w-full h-screen flex justify-center items-center flex-col ">
 
-        <form method="POST" action="./action/action_login.php" class="flex flex-col items-center border p-8 w-full md:w-1/2 lg:w-1/3 gap-y-4 shadow-lg rounded-md">
-            <h1 class="text-2xl font-bold text-gray-700">Login</h1>
+        <form method="POST" action="./action/action_login.php" class="flex flex-col items-center border p-8 w-full md:w-1/2 lg:w-1/3 gap-y-4 shadow-lg rounded-md bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100">
+            <h1 class="text-3xl font-black text-white">Login</h1>
             <!-- User Name Input -->
             <input
                 type="text"
                 name="user_name"
                 placeholder="Enter user name"
-                class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#35EAFF] focus:border-transparent bg-transparent"
                 required />
             <!-- password Input -->
 
@@ -42,7 +43,7 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
                 type="password"
                 name="password"
                 placeholder="Enter password"
-                class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#35EAFF] focus:border-transparent bg-transparent"
                 required />
 
             <!-- I use htmlspecialChars to convert special characters to HTML entities -->
@@ -51,7 +52,7 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
             <button
                 type="submit"
                 name="btn_submit"
-                class="w-full bg-yellow-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-yellow-600 transition-all duration-300 ease-in-out text-xl">
+                class="w-full bg-[#35EAFF] text-white font-semibold px-4 py-2 rounded-md transition-all duration-300 ease-in-out text-xl">
                 Login
             </button>
 

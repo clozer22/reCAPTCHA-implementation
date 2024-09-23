@@ -19,28 +19,29 @@ $recaptchaSiteKey = $config['recaptcha_site_key'];
     <script src="https://google.com/recaptcha/api.js" async defer></script>
     <!-- I use tailwindcss for my styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <?php include('./components/navigation.php') ?>
 
-    <div class="w-full h-screen flex justify-center items-center flex-col ">
+    <div class="w-full h-screen  flex justify-center items-center flex-col">
         <!-- Contact Form -->
-        <form method="POST" action="./action/action_contact.php" class="flex items-center flex-col border p-10 w-full sm:w-3/4 lg:w-1/2 gap-y-5 rounded-lg shadow-lg bg-gray-50">
-            <h1 class="text-3xl font-semibold text-gray-800 mb-4">Contact Form</h1>
+        <form method="POST" action="./action/action_contact.php" class="flex items-center flex-col border p-10 w-full sm:w-3/4 lg:w-1/2 gap-y-5 rounded-lg shadow-lg bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100">
+            <h1 class="text-4xl font-black text-white mb-4">Contact Form</h1>
 
             <!-- User Name Input -->
-            <input type="text" name="user_name" placeholder="User name" class="w-full border border-gray-300 rounded-md text-gray-600 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" required>
+            <input type="text" name="user_name" placeholder="User name" class="w-full border border-gray-300 rounded-md text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#35EAFF] focus:border-transparent bg-transparent" required>
 
             <!-- Message Textarea -->
-            <textarea name="message" placeholder="Your message..." rows="5" class="w-full border border-gray-300 rounded-md text-gray-600 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent resize-none" required></textarea>
+            <textarea name="message" placeholder="Your message..." rows="5" class="w-full border border-gray-300 rounded-md text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#35EAFF] focus:border-transparent resize-none bg-transparent" required></textarea>
 
             <!-- I use htmlspecialChars to convert special characters to HTML entities -->
 
             <div class="g-recaptcha" data-sitekey="<?php echo htmlspecialchars($recaptchaSiteKey); ?>"></div>
 
             <!-- Submit Button -->
-            <button type="submit" name="btn_contact" class="px-6 py-3 w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-semibold text-lg rounded-md transition-colors duration-300">
+            <button type="submit" name="btn_contact" class="px-6 py-3 w-full sm:w-auto bg-[#35EAFF] text-white font-semibold text-lg rounded-md transition-colors duration-300 ">
                 Send
             </button>
         </form>
