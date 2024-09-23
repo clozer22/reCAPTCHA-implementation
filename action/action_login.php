@@ -26,6 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // The secret key must pass to query params and the response ito ay yung response na ginawa ng user
     // after submitting the form.
 
+    // Here's how it works: 
+    // Ang site-key ay makikita lamang sa client-side (web page). When user submit the form and the recaptcha widget is displayed, yung key nito or token it tells Googles reCaptcha api which site is making a request.
+
+    // Ang secret-key naman ay ginagamit lamang sa server-side. It is used only to communicate sa google's reCaptcha servers to verify the user's response (token) if it is valid or not. This is the only secret key na that only your server can validate reCaptcha responses sa gamit mong site.
+
 
     $verify_response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptchaSecretKey . '&response=' . $recaptcha_response);
 
